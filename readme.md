@@ -13,3 +13,5 @@
 `docker build -f docker/Dockerfile -t apgenik-services:latest .`
 
 `docker run --name apgenik-services -d -p 8080:8080 -t apgenik-services:latest`
+
+`docker run --name apgenik-services -d -p 8080:8080 -e "JAVA_OPTS=-Ddebug -Xmx128m" -t apgenik-services:latest`

@@ -1,4 +1,4 @@
-FROM openjdk:17-alpine
+FROM eclipse-temurin:17-jdk-alpine
 
 LABEL authors="Arseniy Nikitin"
 
@@ -6,6 +6,7 @@ ARG JAR_FILE=target/apgenik-services-0.0.1-SNAPSHOT.jar
 
 WORKDIR /opt/app
 
-COPY ${JAR_FILE} app.jar
+COPY docker/run.sh .
+COPY ${JAR_FILE} apgenik-services.jar
 
-ENTRYPOINT ["java","-jar","app.jar"]
+ENTRYPOINT ["./run.sh"]
