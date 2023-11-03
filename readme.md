@@ -6,3 +6,10 @@
 `http://localhost:8080/greeting?name=User`
 
 `{"id":2,"content":"Hello, User!"}`
+
+
+### Создание docker image
+
+`docker build -f docker/Dockerfile -t apgenik-services:latest .`
+
+`docker run --name apgenik-services -d -p 8080:8080 -t apgenik-services:latest`
